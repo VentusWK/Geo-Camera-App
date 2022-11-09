@@ -61,7 +61,6 @@ public abstract class GeoPhotosRoomDatabase : RoomDatabase() {
         suspend fun populateDatabase(geoPhotoDao: GeoPhotoDao) {
             // Delete all content here.
             geoPhotoDao.deleteAll()
-
             // Add sample words.
             val junkData = getJunkData()
             for (latLng in junkData){

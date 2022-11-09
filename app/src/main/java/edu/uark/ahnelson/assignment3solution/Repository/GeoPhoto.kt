@@ -10,6 +10,6 @@ data class GeoPhoto(
     @ColumnInfo(name="filename") var filename:String?,
     @ColumnInfo(name="latitude") var latitude:Double?,
     @ColumnInfo(name="longitude") var longitude:Double?,
-    @ColumnInfo(name="datetime") var datetime:Double?,
+    @ColumnInfo(name="datetime") var datetime:Long?,
     @ColumnInfo(name="extra") var extraInfo:String?
 )

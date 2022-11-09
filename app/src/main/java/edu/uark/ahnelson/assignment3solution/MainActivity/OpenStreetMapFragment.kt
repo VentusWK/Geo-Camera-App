@@ -1,7 +1,5 @@
 package edu.uark.ahnelson.assignment3solution.MainActivity
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -23,7 +21,7 @@ import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 
 
-class OpenStreetMapFragment : Fragment(), Marker.OnMarkerClickListener {
+class OpenStreetMapFragment : Fragment(), Marker.OnMarkerClickListener{
 
     private lateinit var mMap:MapView
     private lateinit var mLocationOverlay:MyLocationNewOverlay
@@ -48,7 +46,6 @@ class OpenStreetMapFragment : Fragment(), Marker.OnMarkerClickListener {
         val mapController = mMap.controller
         mapController.setZoom(3.1)
         changeCenterLocation(curLocation)
-
 
         return root
     }
@@ -147,7 +144,6 @@ class OpenStreetMapFragment : Fragment(), Marker.OnMarkerClickListener {
 
     override fun onMarkerClick(marker: Marker?, mapView: MapView?): Boolean {
         marker?.id?.let { Log.d("OpenStreetMapFragment", it) }
-
         return true
     }
 

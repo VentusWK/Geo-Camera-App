@@ -3,6 +3,7 @@ package edu.uark.ahnelson.assignment3solution.MainActivity
 import androidx.lifecycle.*
 import edu.uark.ahnelson.assignment3solution.Repository.GeoPhoto
 import edu.uark.ahnelson.assignment3solution.Repository.GeoPhotosRepository
+import kotlinx.coroutines.launch
 
 
 class MapsViewModel(private val repository: GeoPhotosRepository): ViewModel() {
@@ -19,5 +20,16 @@ class MapsViewModel(private val repository: GeoPhotosRepository): ViewModel() {
         }
     }
 
+    fun insert(geoPhoto: GeoPhoto) = viewModelScope.launch {
+        repository.insert(geoPhoto)
+    }
+
+    fun update(geoPhoto: GeoPhoto) = viewModelScope.launch {
+        repository.updateGeoPhoto(geoPhoto)
+    }
+
+    fun getGeoPhotoById(id: Int) = viewModelScope.launch {
+        repository.getGeoPhotoById(id)
+    }
 
 }
